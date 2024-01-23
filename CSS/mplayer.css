@@ -1,0 +1,406 @@
+/* ================================= Fonts ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dosis:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --btn-color: #86898c;
+    --font-family1: 'Dosis', sans-serif;
+    --font-family2: 'Courgette', cursive;
+    --background-color1: #000000;
+    --background-color2: #333333;
+    --background-image1: linear-gradient(to right, #008080 20%, #008080 100%);
+}
+
+body {
+    background-color: var(--background-color1);
+}
+
+/* ======================== wrapper container ======================= */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+
+}
+
+.wrapper-play {
+    background-color: var(--background-color2);
+    width: 90%;
+    border-radius: 25px;
+    max-width: 290px;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+     box-shadow: rgba(221, 221, 234, 0.25) 0px 30px 60px -12px inset, rgba(3, 3, 3, 0.3) 0px 18px 36px -18px inset; 
+
+}
+
+.wrapper-play::before {
+    content: '';
+    position: absolute;
+    left: -110px;
+    top: 60px;
+    transform: rotate(130deg);
+    width: 200px;
+    height: 20px;
+    background-color: #008080;
+     box-shadow: 2px 2px 5px #333333
+}
+
+.wrapper-play::after {
+    content: '';
+    position: absolute;
+    right: -110px;
+    bottom: 60px;
+    transform: rotate(130deg);
+    width: 200px;
+    height: 20px;
+    background-color: #008080;
+    box-shadow: 2px -6px 5px #333333;
+}
+
+header {
+    padding-top: 0.6rem;
+}
+
+header,
+.song-timer,
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header .headbtn {
+    border-radius: 153px;
+    background: #000000;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    color: var(--btn-color);
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: rgb(34, 34, 34) 3px 3px 6px 0px inset, rgba(18, 17, 17, 0.5) -3px -3px 6px 1px inset;
+}
+
+.headbtn:active {
+    border-radius: 153px;
+    background: linear-gradient(145deg, #000000, #333333);
+
+}
+
+header h3 {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: var(--font-family2);
+    font-weight: 500;
+    color: var(--btn-color);
+}
+
+.player {
+    margin-top: 1.6rem;
+    padding-bottom: 0.9rem;
+}
+
+img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.2rem;
+    object-fit: cover;
+    border: 6px solid #bcc9e2;
+    border-radius: 50%;
+}
+
+.name {
+    font-family: var(--font-family2);
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--btn-color);
+}
+
+.artists {
+    color: #A7A9AB;
+    font-family: var(--font-family1);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 0 20px;
+}
+
+.audio-c {
+    margin: 15px 0px 10px 0px;
+}
+
+.song-timer span {
+    font-size: 14px;
+    color: #7c7d80;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+/* =============================== Progress bar ========================= */
+.progress-area {
+    height: 9px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 50px;
+    background-color: #c6d5f0;
+    cursor: pointer;
+    position: relative;
+}
+
+.progressbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-image: var(--background-image1);
+    border-radius: 0.5rem;
+}
+
+.progressbar::before {
+    content: "";
+    position: absolute;
+    background-color: #c6d5f0;
+    border-radius: 50%;
+    top: 50%;
+    right: -11px;
+    z-index: 2;
+    width: 19px;
+    height: 19px;
+    outline: none;
+    border: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.progressbar::after {
+    content: "";
+    position: absolute;
+    background-image: var(--background-image1);
+    border-radius: 50%;
+    top: 49%;
+    right: -5px;
+    z-index: 2;
+    width: 8px;
+    height: 8px;
+    outline: none;
+    border: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.controls {
+    margin: 35px 14px 0px 14px;
+}
+
+.btn-c {
+    width: 60px;
+    height: 60px;
+    border-radius: 153px;
+    background: #000000;
+    border: none;
+    transition: all 0.2s ease;
+
+}
+
+.btn-c:active {
+    border-radius: 153px;
+    background: linear-gradient(145deg, #000000, #333333);
+
+
+}
+
+.controls i {
+    font-size: 20px;
+    color: #a7a9a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls .play-pause {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+}
+
+/* ============================= play-pause button =================== */
+.play-pause i {
+    text-align: center;
+    color: #fff;
+}
+
+.play-pause {
+    border: none;
+    background-color: #a5c6f6;
+    background-image: var(--background-image1);
+
+}
+
+.play-pause:active {
+    border-radius: 153px;
+    background: linear-gradient(145deg, #a5c6f6, #4e8be6);
+
+}
+
+/* ========================== Image rotate ======================== */
+.rotate {
+    animation: rotation 8s infinite linear;
+    transform-origin: center;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================= Music list ============================ */
+.music-list {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    padding: 0px 30px;
+    border-radius: 15px;
+    background-color: #333333;
+    transition: all 0.4s ease-in-out;
+}
+
+.music-list.show {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#close {
+    color: #A7A9AB;
+    font-size: 18px;
+    position: relative;
+    top: 7px;
+}
+
+.header .row {
+    display: flex;
+    align-items: center;
+    color: #86898c;
+    font-family: var(--font-family2);
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 12px;
+    letter-spacing: .75px;
+}
+
+.row p {
+    text-align: left;
+}
+
+.music-list .header,
+.music-list ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .row i {
+    cursor: default;
+}
+
+.music-list ul {
+    margin-top: 10px;
+    max-height: 239px;
+    overflow: auto;
+}
+
+.music-list ul li {
+    list-style-type: none;
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #a6a7a83b;
+    padding-top: 15px;
+    color: #A7A9AB;
+    font-family: var(--font-family1);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .75px;
+    transition: all 0.15s ease-in-out;
+}
+
+.music-list ul li:last-child {
+    border-bottom: 0px;
+}
+
+.music-list ul li p {
+    opacity: 0.6;
+}
+
+ul li .audio-duration {
+    font-size: 14px;
+}
+
+.music-list ul::-webkit-scrollbar {
+    width: 0;
+}
+
+.row {
+    text-align: left;
+}
+
+.music-list ul li:hover {
+    color: #72a2ea;
+}
+
+ul li.playing {
+    color: #72a2ea;
+    pointer-events: none;
+}
+
+/* ============================= Media queries ============================ */
+@media (max-width:991px) {
+    header h3 {
+        font-size: 1.3rem;
+    }
+
+    .name {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width:992px) {
+    header h3 {
+        font-size: 1.2rem;
+    }
+
+    .name {
+        font-size: 1.1rem;
+    }
+
+    .wrapper {
+        height: 100vh;
+    }
+}
